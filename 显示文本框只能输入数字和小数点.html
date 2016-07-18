@@ -1,0 +1,42 @@
+<!-- 使用正则表达式的一个小练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>限制文本框只能输入数字和小数点</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<script>
+	var oTxt = document.getElementById('txt');
+	oTxt.onkeydown = function(e){
+		e = e || window.event;
+		var keyCode = e.which || e.keycode;
+		if((keyCode <= 57 && keyCode >= 48) || keyCode == 190 || keyCode == 8){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+	// oTxt.onkeydown = function(e){
+	// 	e = e || window.event;
+	// 	var re = /[^0-9\.]/g;
+	// 	var that = this;
+	// 	setTimeout(function(){
+	// 		if( re.test(this.value) ){
+	// 	e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+	// 	}
+	// 	},0);
+		
+
+
+		// e.preventDefault && e.preventDefault();
+		// e.returnValue && (e.returnValue = false); 
+
+		
+	
+	</script>
+</body>
+</html>
